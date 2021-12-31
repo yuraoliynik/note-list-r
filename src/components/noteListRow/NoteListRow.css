@@ -1,0 +1,25 @@
+.note-list__row {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    width: 100%;
+    grid-column-gap: 5px;
+}
+
+.note-list__cell {
+    width: calc((100% - 25px)/ 6);
+}
+
+.note-list__action-block {
+    display: flex;
+    justify-content: space-between;
+    width: calc((100% - 25px)/ 6);
+}
+
+.note-list__action-block > div {
+    margin-right: 10px;
+}
+
+.note-list__action-block > :last-child {
+    margin-right: 0;
+}

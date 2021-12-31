@@ -1,0 +1,16 @@
+.table__header {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: center;
+    background: #9a9a9a;
+    color: white;
+    font-size: 15px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.table__header > .table-cell > p {
+    width: 100%;
+    text-align: center;
+}

@@ -1,0 +1,17 @@
+.archive-list__row {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    width: 100%;
+    grid-column-gap: 5px;
+}
+
+.archive-list__cell {
+    width: calc((100% - 20px)/ 5);
+}
+
+.archive-list__action {
+    display: flex;
+    justify-content: center;
+    width: calc((100% - 20px)/ 5);
+}
