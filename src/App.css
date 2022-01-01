@@ -11,5 +11,9 @@ html {
 
 body {
     padding: 20px 30px;
-    min-width: 950px;
+    min-width: 980px;
+}
+
+.cursor_pointer {
+    cursor: pointer;
 }

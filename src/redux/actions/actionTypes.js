@@ -1,9 +1,11 @@
 const INSERT_NOTE = 'INSERT_NOTE';
 const EDIT_NOTE = 'EDIT_NOTE';
 const DELETE_NOTE = 'DELETE_NOTE';
+const SET_FORM_NOTE = 'SET FORM NOTE';
 
 export {
     INSERT_NOTE,
     EDIT_NOTE,
-    DELETE_NOTE
+    DELETE_NOTE,
+    SET_FORM_NOTE
 };

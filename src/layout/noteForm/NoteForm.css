@@ -1,0 +1,29 @@
+.note-form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.note-form__input-block {
+    display: flex;
+    width: 100%;
+}
+
+.note-form__control {
+    display: flex;
+    width: calc(100% / 4.8);
+}
+
+.note-form__control > :nth-child(n) {
+    width: 100%;
+}
+
+.note-form__button-block {
+    display: flex;
+    flex-flow: row;
+}
+
+.note-form__button-block > :first-child {
+    margin-right: 10px;
+}

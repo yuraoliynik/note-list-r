@@ -1,0 +1,35 @@
+.summary-list__row {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.summary-list__cell {
+    width: calc(100%/ 3);
+}
+
+.summary-list__cell > p {
+    text-align: center;
+}
+
+.summary-list__archive {
+    display: none;
+    justify-content: center;
+    padding: 0 40px;
+}
+
+.summary-list__archive .table__header {
+    height: 30px;
+    margin-bottom: 4px;
+}
+
+.summary-list__archive .table__row {
+    height: 35px;
+    margin-bottom: 2px;
+}
+
+.summary-list__archive .table {
+    margin-bottom: 10px;
+}

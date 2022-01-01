@@ -1,7 +1,8 @@
 import {
     INSERT_NOTE,
     EDIT_NOTE,
-    DELETE_NOTE
+    DELETE_NOTE,
+    SET_FORM_NOTE
 } from "./actionTypes";
 
 const actionInsertNote = (payload) => {
@@ -16,8 +17,13 @@ const actionDeleteNote = (payload) => {
     return {type: DELETE_NOTE, payload};
 };
 
+const actionSetFormNote = (payload) => {
+    return {type: SET_FORM_NOTE, payload};
+};
+
 export {
     actionInsertNote,
     actionEditNote,
-    actionDeleteNote
+    actionDeleteNote,
+    actionSetFormNote
 };

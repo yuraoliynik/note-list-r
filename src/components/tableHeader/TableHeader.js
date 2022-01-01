@@ -5,7 +5,6 @@ function TableHeader({columnNamesArr}) {
     const countHeaderCell = columnNamesArr.length;
     const cellWidth = 100 / countHeaderCell;
 
-
     return (
         <div className={'table__header'}>
             {
