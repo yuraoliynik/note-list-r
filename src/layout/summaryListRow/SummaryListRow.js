@@ -14,21 +14,19 @@ export default function SummaryListRow({summaryObject}) {
         archive
     } = summaryObject;
 
-    const notes = useSelector(({notes}) => notes);
+    const {notes} = useSelector(({noteReducer}) => noteReducer);
     const archiveNotes = getArchiveNotes(notes);
 
     const [archiveNotesCategory, setArchiveNotesCategory] = useState([]);
+    const [archiveDiv, setArchiveDiv] = useState({show: 'none'});
 
     useEffect(() => {
-        const archiveDiv = document.getElementById(`${categoryName}`);
-        archiveDiv.style.display = 'none';
+        setArchiveDiv({show: 'none'})
     }, [archiveNotes.length]);
 
     const handleClickRow = () => {
-        const archiveDiv = document.getElementById(`${categoryName}`);
-
-        if (archiveDiv.style.display === 'block') {
-            return archiveDiv.style.display = 'none';
+        if (archiveDiv.show === 'block') {
+            return setArchiveDiv({show: 'none'});
         }
 
         const archiveNotesByCategory = archiveNotes
@@ -37,7 +35,7 @@ export default function SummaryListRow({summaryObject}) {
         if (archiveNotesByCategory.length) {
             setArchiveNotesCategory(archiveNotesByCategory);
 
-            archiveDiv.style.display = 'block';
+            setArchiveDiv({show: 'block'})
         }
     };
 
@@ -49,7 +47,7 @@ export default function SummaryListRow({summaryObject}) {
                 <TableCell data={archive} className={'summary-list__cell'}/>
             </div>
 
-            <div className={`summary-list__archive`} id={`${categoryName}`}>
+            <div className={`summary-list__archive`} style={{display: archiveDiv.show}}>
                 <NoteTable
                     columnNamesArr={tableColumnNames.archiveList}
                     componentRowName={rowComponentNames.ARCHIVE_LIST_ROW}

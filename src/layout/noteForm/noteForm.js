@@ -1,15 +1,15 @@
 import {useDispatch, useSelector} from "react-redux";
 
-import "./NoteForm.css";
+import "./noteForm.css";
 import Button from "../../components/button/Button";
 import {noteCategoryNames} from "../../constants";
 import {actionSetFormNote} from "../../redux/actions";
-import tools from "../../tools";
+import utils from "../../utils";
 
 const noteCategoryNamesArr = Object.values(noteCategoryNames);
 
 function NoteForm({handleClickCancel, handleClickSave}) {
-    const formNote = useSelector(({formNote}) => formNote);
+    const {formNote} = useSelector(({noteReducer}) => noteReducer);
 
     const dispatch = useDispatch();
 
@@ -24,10 +24,10 @@ function NoteForm({handleClickCancel, handleClickSave}) {
         ))
     };
 
-    const formatCreated = tools.formatInputDate(formNote.created)
+    const formatCreated = utils.formatInputDate(formNote.created)
 
     return (
-        <div className={'note-form'}>
+        <div className={'note-form'} style={{}}>
             <div className={'note-form__input-block'}>
                 <div className={'note-form__control'}>
                     <input type="text"

@@ -1,9 +1,8 @@
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 import "./ArchiveListRow.css";
 import TableCell from "../../components/tableCell/TableCell";
 import {actionEditNote} from "../../redux/actions";
-import {getVisibleNoteForm} from "../../hooks";
 
 function ArchiveListRow({noteObject}) {
     const {
@@ -14,11 +13,12 @@ function ArchiveListRow({noteObject}) {
         dates
     } = noteObject;
 
+    const {noteFormShow} = useSelector(({appReducer}) => appReducer);
+    const visibleNoteForm = noteFormShow === 'block';
+
     const dispatch = useDispatch();
 
     const handleClickActive = () => {
-        const visibleNoteForm = getVisibleNoteForm();
-
         if (visibleNoteForm) {
             return;
         }

@@ -1,4 +1,4 @@
-import tools from '../tools';
+import utils from '../utils';
 
 class Note {
     static #noteId = 0;
@@ -10,7 +10,7 @@ class Note {
     constructor(name, created = '', category, content, archive = 0) {
         this.id = Note.#getId();
         this.name = name;
-        this.created = tools.formatDateToUS(created);
+        this.created = utils.formatDateToUS(created);
         this.category = category;
         this.content = content;
 
@@ -22,7 +22,7 @@ class Note {
                 configurable: true,
                 get() {
                     if (this.content) {
-                        return tools.findDates(this.content);
+                        return utils.findDates(this.content);
                     }
 
                     return '';

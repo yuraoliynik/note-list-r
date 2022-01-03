@@ -1,6 +1,7 @@
 import {createStore} from "redux";
-import noteReducer from "../reducers/noteReducer";
 
-const store = createStore(noteReducer);
+import reducer from "../reducers/index";
+
+const store = createStore(reducer);
 
 export default store;

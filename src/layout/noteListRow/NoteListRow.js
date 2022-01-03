@@ -1,13 +1,12 @@
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 import "./NoteListRow.css";
 import TableCell from "../../components/tableCell/TableCell";
 import {
     actionEditNote,
     actionDeleteNote,
-    actionSetFormNote
+    actionSetFormNote, actionSetAppSetting
 } from "../../redux/actions";
-import {getVisibleNoteForm, setVisibleCreateButton, setVisibleNoteForm} from "../../hooks";
 
 function NoteListRow({noteObject}) {
     const {
@@ -22,8 +21,10 @@ function NoteListRow({noteObject}) {
     const dispatch = useDispatch();
 
     const handleClickEdit = () => {
-        setVisibleNoteForm(1);
-        setVisibleCreateButton(0);
+        dispatch(actionSetAppSetting({
+            noteFormShow: 'block',
+            createButtonShow: 'none'
+        }));
 
         dispatch(actionSetFormNote({
             id,
@@ -34,9 +35,10 @@ function NoteListRow({noteObject}) {
         }));
     };
 
-    const handleClickArchive = () => {
-        const visibleNoteForm = getVisibleNoteForm();
+    const {noteFormShow} = useSelector(({appReducer}) => appReducer);
+    const visibleNoteForm = noteFormShow === 'block';
 
+    const handleClickArchive = () => {
         if (visibleNoteForm) {
             return;
         }
@@ -50,8 +52,6 @@ function NoteListRow({noteObject}) {
     };
 
     const handleClickDelete = () => {
-        const visibleNoteForm = getVisibleNoteForm();
-
         if (visibleNoteForm) {
             return;
         }
