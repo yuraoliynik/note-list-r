@@ -3,12 +3,10 @@
 }
 
 .note-page__form {
-    display: none;
     margin-bottom: 50px;
 }
 
 .note-page__create-button {
-    display: flex;
     justify-content: end;
     padding-right: 20px;
     margin-bottom: 50px;

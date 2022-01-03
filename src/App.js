@@ -1,10 +1,12 @@
 import './App.css';
 
-import NotePage from "./pages/NotePage/NotePage";
+import NotePage from "./pages/notePage/NotePage";
 
 function App() {
     return (
-        <NotePage/>
+        <div>
+            <NotePage/>
+        </div>
     );
 }
 
